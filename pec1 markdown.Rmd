@@ -1,0 +1,30 @@
+---
+title: "PEC1 - Análisis de datos ómicos"
+author: "Anna Sommer"
+date: "2025-03-27"
+output: html_document
+---
+
+#Tabla de contenidos
+
+#Resumen
+
+#Objetivos
+
+#Metodos
+
+#Resultados
+##Ejercicio 1
+
+##Ejercicio 2
+La diferencia principal entre la clase SummarizedExperiment en comparación con la clase ExpressionSet es que la primera es más flexible con respecto a la información contenida en las filas de la tabla, ya que permite tanto el almacenamiento de objetos GRanges como de objetos DataFrame. 
+
+Fuente: https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html
+
+#Discusión
+
+#Conclusiones
+
+#Referencias
+https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html
+

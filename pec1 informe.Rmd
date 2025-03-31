@@ -15,6 +15,12 @@ output: html_document
 
 ## Metodos
 
+Para la creación de la clase SummarizedExperiment instalé y utilicé el paquete del mismo nombre ("SummarizedExperiment") de Bioconductor.
+
+Para el análisis explorativo de los datos utilicé los paquetes "reshape2" y "ggplot2" para graficar los datos. 
+
+Finalmente, para crear el repositorio en GitHub utilicé las funciones del paquete "usethis" (vea resultados para información más detallada).
+
 ## Resultados 
 ### Ejercicio 1
 Elegí el dataset 2024-Cachexia del repositorio de Github proporcionado en el ejercicio.
@@ -52,7 +58,6 @@ Por último, solo falta guardar el objeto SummarizedExperiment en formato ".Rda"
 save(sumex, file = "summarizedexperiment.Rda")
 
 ```
-
 
 La diferencia principal entre la clase SummarizedExperiment en comparación con la clase ExpressionSet es que la primera es más flexible con respecto a la información contenida en las filas de la tabla, ya que permite tanto el almacenamiento de objetos GRanges como de objetos DataFrame.
 

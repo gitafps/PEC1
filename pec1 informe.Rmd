@@ -9,6 +9,16 @@ output: html_document
 
 ## Tabla de contenidos
 
+| **Chapter**  | **Page** |
+|--------------|----------|
+| Resumen      | 1        |
+| Objetivos    | 1        |
+| Métodos      | 1        |
+| Resultados   | 1        |
+| Discusión    | 1        |
+| Conclusiones | 1        |
+| Referencias  | 1        |
+
 ## Resumen
 
 ## Objetivos

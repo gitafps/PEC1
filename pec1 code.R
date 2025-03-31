@@ -17,7 +17,7 @@ head(assay(sumex))
 
 summary(assay(sumex))
 
-# para añadir gráficos al análisis explorativo usaré el paquete ggplot2
+# para añadir gráficos al análisis explorativo usaré el paquete ggplot2 & reshape2
 library(ggplot2)
 library(reshape2)
 
@@ -34,8 +34,7 @@ ggplot(df, aes(x = value)) +
   labs(x = "Nivel de metabolitos", y = "Frecuencia")
 
 # podemos hacer lo mismo pero separado por grupos
-grupo <- df$Muscle.loss
-
+---------------------------
 
 # podemos hacer un análisis comparativo entre los dos grupos 
 # para los 10 primeros metabolitos (también se podría hacer

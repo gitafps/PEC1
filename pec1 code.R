@@ -33,9 +33,31 @@ ggplot(df, aes(x = value)) +
   geom_histogram(bins = 10, fill = "yellow") +
   labs(x = "Nivel de metabolitos", y = "Frecuencia")
 
-# podemos hacer lo mismo pero separado por grupos
----------------------------
+# podemos hacer lo mismo pero separado por grupos:
+# primero (para facilitar el trabajo) asociaré las muestras 
+# de los pacientes caquexicos y control a dos variables diferentes:
+# (la condición del paciente se indica en la columna Muscle.loss)
+cach <- assay(sumex)[, "Muscle.loss"] == "cachexic"
+cont <- assay(sumex)[, "Muscle.loss"] == "control"
 
+# crear subsets según el grupo
+cach2 <- assay(sumex)[cach, colnames(assay(sumex)) != "Muscle.loss"]
+cont2 <- assay(sumex)[cont, colnames(assay(sumex)) != "Muscle.loss"]
+
+# preparar datos para el analisis como antes
+dfcach <- as.data.frame(cach2)
+dfcont <- as.data.frame(cont2)
+dfcach2 <- melt(dfcach)
+dfcont2 <- melt(dfcont)
+
+# hacer gráficos
+ggplot(dfcach2, aes(x = value)) +
+  geom_histogram(bins = 10, fill = "orange") +
+  labs(x = "Nivel de metabolitos", y = "Frecuencia")
+ggplot(dfcont2, aes(x = value)) +
+  geom_histogram(bins = 10, fill = "blue") +
+  labs(x = "Nivel de metabolitos", y = "Frecuencia")
+  
 # podemos hacer un análisis comparativo entre los dos grupos 
 # para los 10 primeros metabolitos (también se podría hacer
 # para todos los metabolitos pero generaríamos demasiados plots).

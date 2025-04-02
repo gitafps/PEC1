@@ -9,19 +9,23 @@ output: html_document
 
 ## Tabla de contenidos
 
-| **Chapter**  | **Page** |
-|--------------|----------|
-| Resumen      | 1        |
-| Objetivos    | 1        |
-| Métodos      | 1        |
-| Resultados   | 1        |
-| Discusión    | 1        |
-| Conclusiones | 1        |
-| Referencias  | 1        |
+| **Chapter**  | 
+|--------------|
+| Resumen      |
+| Objetivos    | 
+| Métodos      | 
+| Resultados   |
+| Discusión    | 
+| Conclusiones | 
+| Referencias  | 
 
 ## Resumen
 
 ## Objetivos
+
+1. Integrar el uso de GitHub y Bioconductor en el contexto del análisis de datos ómicos.
+
+2. Hacer un análisis explorativo de un dataset de metabolómica.
 
 ## Metodos
 
@@ -75,7 +79,10 @@ Fuente: <https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExpe
 
 ### Ejercicio 3
 
-
+La primera parte del análisis explorativo de los datos realizado, como se puede ver en el documento del código correspondiente ("pec1 code", en el repositorio de GitHub), es un resumen estadístico de las variables. Sin embargo, dado que el dataset contiene muchos variables diferentes, la interpretación de este resumen no resultó muy intuitiva. Al graficar los datos, sin embargo, se mostraron algunas tendencias interesantes.
+El primer histograma nos muestra, que los sujetos tienen un nivel de metabolitos relativamente bajo para la gran mayoría de los metabolitos medidos. Esto, para mi, levantó la pregunta de si este hecho aplica tanto para pacientes sanos como`para pacientes caquexicos. Por eso, en el siguiente paso, dividé el SummarizedExperiment en dos subsets, uno conteniendo solo los registros de pacientes sanos y el otro conteniendo solo los registros de pacientes enfermos, y volví a analizar la distribución de los niveles de metabolitos. Este análisis demostró que en el grupo de los pacientes caquéxicos, algunos de los niveles de metabolitos llegan a ser mucho más altos que en el grupo control. 
+La desventaja de estos gráficos fue, que aunque me permitió contrastar los niveles por grupo, no proporcionó una comparación por variables específicas. Por esto, decidí incluír en el análisis explorativo también algunos violin plots que compararan los niveles de metabolitos por grupo y por metabolito específico. Considerando que el dataset contiene datos de 63 diferentes metabolitos, y hacer 63 gráficos podría ser algo abrumador en la interpretación, decidí ejemplificar los gráficos solo para los primeros 10 metabolitos. De esta manera esperaba poder confirmar o desechar lo observado en los anteriores gráficos: la tendencia de que los niveles de metabolitos suelen ser más altos en pacientes caquexicos. Por supuesto, el análisis se podría extender según el interés que uno tiene en metabolitos específicos del dataset. Los violin plots confirmaron claramente que los metabolitos observados llegan a niveles elevados en los individuos que sufren de caquexia.
+En resumen, el análisis explorativo mostró que la caquexia parece provocar niveles elevados de metabolitos.
 
 ### Ejercicio 4
 
@@ -89,7 +96,12 @@ A mi nuevo repositorio de github le di el nombre de "PEC1". Se puede encontrar s
 
 ## Discusión
 
+El dataset elegido tiene una estructura intuitiva y por eso resultó relativamente conveniente trabajar con él. Sin embargo, faltaron los valores de ColData y RowData (es decir, datos adicionales sobre los registros y el experimento en general). Esto no fue un obstáculo al crear el objeto de clase SummarizedExperiment, aunque en general sería mejor contar también con esta información.
+El análisis explorativo de los datos mostró una tendencia interesante de los niveles de metabolitos, contrastando el grupo de pacientes caquexicos con el grupo control.
+
 ## Conclusiones
+
+En el futuro sería interesante trabajar con un dataset que cuente con más información, para aprovechar mejor las funciones de la clase SummarizedExperiment. Sin embargo, considero que los objetivos se han cumplido, ya que esta tarea sirvió de practicar el uso integrado de BioConductor y GitHub y además introdujo la clase SummarizedExperiment.
 
 ## Referencias
 <https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html>
